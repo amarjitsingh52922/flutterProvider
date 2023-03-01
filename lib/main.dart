@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_shopping_app/providers/product_provider.dart';
 import 'package:provider_shopping_app/screens/main_shopping_screen.dart';
 import 'package:provider_shopping_app/screens/produc_detail_screen.dart';
 
@@ -28,6 +30,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainShoppingScreen();
+    return ChangeNotifierProvider(
+        create: (BuildContext context) => Products(),
+        child: MainShoppingScreen());
   }
 }
